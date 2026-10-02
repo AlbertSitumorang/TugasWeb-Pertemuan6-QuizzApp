@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Quiz App — Tugas Rutin 6</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-blob b1"></div>
+<div class="bg-blob b2"></div>
+<div class="bg-blob b3"></div>
+
+<div class="floating-code-layer" aria-hidden="true">
+  <span class="floating-code fc1 cat-html">&lt;/&gt;</span>
+  <span class="floating-code fc2 cat-css">{ }</span>
+  <span class="floating-code fc3 cat-js">=&gt;</span>
+  <span class="floating-code fc4">01</span>
+  <span class="floating-code fc5 cat-html">&lt;div&gt;</span>
+  <span class="floating-code fc6 cat-css">#id</span>
+  <span class="floating-code fc7 emoji">💻</span>
+  <span class="floating-code fc8 emoji">⌨️</span>
+  <span class="floating-code fc9">const</span>
+  <span class="floating-code fc10 cat-js">CSS</span>
+  <span class="floating-code fc11 emoji">🖥️</span>
+  <span class="floating-code fc12 cat-html">&lt;html&gt;</span>
+</div>
+
+<div class="confetti-layer" id="confettiLayer"></div>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><b>Quiz</b> · Dasar Web Programming</div>
+    <button class="theme-toggle" id="themeToggle" type="button">☀️ Terang</button>
+  </div>
+
+  <div class="card" id="quizCard">
+
+    <!-- START VIEW -->
+    <section class="view active" id="view-start">
+      <h1 class="start-title">Interactive Quiz App</h1>
+      <p class="start-desc">Uji pemahamanmu tentang dasar HTML, CSS, dan JavaScript lewat soal pilihan ganda yang diacak tiap sesi. Skor dihitung otomatis di akhir.</p>
+      <div class="topic-chips">
+        <span class="topic-chip html"><span class="dot"></span>HTML</span>
+        <span class="topic-chip css"><span class="dot"></span>CSS</span>
+        <span class="topic-chip js"><span class="dot"></span>JavaScript</span>
+      </div>
+      <div class="highscore">
+        <span>🏆 Skor tertinggi</span>
+        <b id="highScoreValue">—</b>
+      </div>
+      <button class="btn" id="startBtn" type="button">Mulai Quiz</button>
+    </section>
+
+    <!-- QUIZ VIEW -->
+    <section class="view" id="view-quiz">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="quiz-meta">
+        <span id="questionCounter">Soal 1 dari 6</span>
+        <span class="category-badge" id="categoryBadge">—</span>
+        <span class="timer" id="timer">15</span>
+      </div>
+
+      <div class="question-block">
+        <h2 class="question-text" id="questionText"></h2>
+        <div class="options" id="optionsContainer"></div>
+      </div>
+
+      <div class="feedback" id="feedback"></div>
+      <button class="btn" id="nextBtn" type="button" style="display:none;">Lanjut</button>
+    </section>
+
+    <!-- RESULT VIEW -->
+    <section class="view" id="view-result">
+      <div class="result-head">
+        <div class="result-emoji" id="resultEmoji">🎯</div>
+        <div class="score-ring-wrap">
+          <svg class="score-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+            <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <div class="score-ring-label">
+            <span class="big"><span id="resultScore">0</span>/<span id="resultTotal">6</span></span>
+            <span class="small">skor akhir</span>
+          </div>
+        </div>
+      </div>
+      <div class="result-label" id="resultMessage"></div>
+      <div class="result-note" id="resultHighscoreNote"></div>
+      <button class="btn" id="restartBtn" type="button">Ulangi Quiz</button>
+    </section>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
